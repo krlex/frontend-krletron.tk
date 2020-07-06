@@ -7,4 +7,4 @@ setup
 
 echo "Frontend"
 echo "========"
-env HOST=$(hostname) "${PACKAGE_MANAGER}" start
+sudo env HOST=$(hostname) "${PACKAGE_MANAGER}" start
