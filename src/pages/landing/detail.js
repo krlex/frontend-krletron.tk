@@ -16,13 +16,13 @@ class Landing extends Component {
     return (
       <Template style={styles.root}>
         <h1>
-          Freenit Framework
+          Comming soon new Krletron.tk site
         </h1>
         <div style={styles.small}>
-          Startkit for fast React development
+          No need to use Wordpress...Freenit is new Framework for you
         </div>
         <Paper style={styles.freenit}>
-          Freenit
+          Krletron.tk
         </Paper>
       </Template>
     )
