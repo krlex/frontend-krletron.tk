@@ -16,7 +16,7 @@ class Landing extends Component {
     return (
       <Template style={styles.root}>
         <h1>
-          Comming soon new Krletron.tk site
+          Coming soon new Krletron.tk site
         </h1>
         <div style={styles.small}>
           No need to use Wordpress...Freenit is new Framework for you
