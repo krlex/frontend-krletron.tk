@@ -3,13 +3,14 @@ import React, { useState } from 'react'
 // Pages
 import {
   Auth,
-  Profile,
   Resolution,
   Role,
   Store,
   User,
 } from 'freenit'
 import Landing from 'pages/landing'
+import Gallery from 'pages/gallery'
+import Profile from 'pages/profile'
 import { withRouter } from 'react-router-dom'
 
 // Templates
@@ -26,6 +27,10 @@ const StoreProvider = (props) => {
     landing: new Landing.store(useState(Landing.initial.detail)),
     notification: new EmptyTemplate.store(
       useState(EmptyTemplate.initial.detail),
+    ),
+    gallery: new Gallery.store(
+      useState(Gallery.initial.detail),
+      useState(Gallery.initial.detail),
     ),
     profile: new Profile.store(
       useState(Profile.initial.detail),

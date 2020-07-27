@@ -4,12 +4,13 @@ import { Switch, Route } from 'react-router-dom'
 // Pages
 import {
   Auth,
-  Profile,
   NoPage,
   rest,
 } from 'freenit'
 import Dashboard from 'pages/dashboard'
 import Landing from 'pages/landing'
+import Gallery from 'pages/gallery'
+import Profile from 'pages/profile'
 import Role from 'pages/role'
 import User from 'pages/user'
 
@@ -36,6 +37,7 @@ const Routing = () => {
       <Route exact path="/user/:id" component={User.detail} />
       <Route exact path="/users" component={User.list} />
       <Route exact path="/users/:page" component={User.list} />
+      <Route exact path="/:year/gallery" component={Gallery.detail} />
       <Route path="*" component={NoPage.detail} />
     </Switch>
   )
