@@ -144,7 +144,7 @@ class Template extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Link to="/" data-id="app">
-                Freenit
+                Welcome to Krletron.tk
               </Link>
             </Typography>
             {BarLinks}
