@@ -6,6 +6,7 @@ import { withStore, EmptyTemplate } from 'freenit'
 // Components
 import {
   AppBar,
+  Button,
   Drawer,
   IconButton,
   ListItemIcon,
@@ -23,6 +24,8 @@ import ProfileIcon from '@material-ui/icons/AccountCircle'
 import MenuIcon from '@material-ui/icons/Menu'
 import RoleIcon from '@material-ui/icons/People'
 import UserIcon from '@material-ui/icons/PeopleOutline'
+import GalleryIcon from '@material-ui/icons/Apps'
+import EventIcon from '@material-ui/icons/EventNote'
 
 import styles from './styles'
 
@@ -30,6 +33,19 @@ import styles from './styles'
 class Template extends React.Component {
   state = {
     showMenu: false,
+  }
+
+  constructor(props){
+    super(props)
+    this.fetch()
+  }
+
+  fetch = async () => {
+    const { event, notification } = this.props.store
+    const response = await event.fetchAll()
+    if (!response.ok){
+      notification.show(response.message)
+    }
   }
 
   handleLogout = async () => {
@@ -49,7 +65,7 @@ class Template extends React.Component {
   }
 
   render() {
-    const { auth, profile, resolution } = this.props.store
+    const { auth, event, profile, resolution } = this.props.store
     const AnonButton = (
       <Link to="/login" style={styles.login}>
         <IconButton color="inherit">
@@ -129,12 +145,42 @@ class Template extends React.Component {
         ...AdminMenu,
       ]
       : null
+    const gallery = event.list.total > 0
+      ? (
+        <Link to={`/${event.detail.year}/gallery`}>
+          <Button color="inherit">Gallery</Button>
+        </Link>
+      ) : null
     const BarLinks = resolution.detail.width > 410
       ? (
         <div>
+          {gallery}
           {AuthButton}
         </div>
       ) : null
+    const PublicMenu = event.list.total > 0
+      ?[
+        (
+          <Link to={`${event.detail.year}/gellery`} key="gallery">
+            <MenuItem>
+              <ListItemIcon>
+                <GalleryIcon />
+              </ListItemIcon>
+                  Gallery
+            </MenuItem>
+          </Link>
+        ),
+        (
+          <Link to="/events" key="events">
+            <MenuItem>
+              <ListItemIcon>
+                <EventIcon />
+              </ListItemIcon>
+              Events
+            </MenuItem>
+          </Link>
+        )
+      ] :null
     return (
       <div>
         <AppBar position="static">
@@ -170,6 +216,7 @@ class Template extends React.Component {
               tabIndex={0}
               onKeyDown={this.handleMenuClose}
             >
+              {PublicMenu}
               {AuthMenu}
               {LoggingMenu}
             </div>

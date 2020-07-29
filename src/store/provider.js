@@ -10,6 +10,7 @@ import {
 } from 'freenit'
 import Landing from 'pages/landing'
 import Gallery from 'pages/gallery'
+import Event from 'pages/event'
 import Profile from 'pages/profile'
 import { withRouter } from 'react-router-dom'
 
@@ -28,9 +29,13 @@ const StoreProvider = (props) => {
     notification: new EmptyTemplate.store(
       useState(EmptyTemplate.initial.detail),
     ),
+    event: new Event.store(
+      useState(Event.initial.detail),
+      useState(Event.initial.list),
+    ),
     gallery: new Gallery.store(
       useState(Gallery.initial.detail),
-      useState(Gallery.initial.detail),
+      useState(Gallery.initial.list),
     ),
     profile: new Profile.store(
       useState(Profile.initial.detail),
