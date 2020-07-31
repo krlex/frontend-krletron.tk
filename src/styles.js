@@ -1,4 +1,4 @@
-// import background from 'background.png'
+import background from 'background.jpg'
 
 
 export default {
@@ -6,7 +6,7 @@ export default {
     margin: 0,
     padding: 0,
     fontFamily: 'sans-serif',
-    // backgroundImage: `url("${background}")`,
+    backgroundImage: `url("${background}")`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '100% 100%',
     backgroundAttachment: 'fixed',
