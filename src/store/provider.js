@@ -8,6 +8,7 @@ import {
   Store,
   User,
 } from 'freenit'
+import About from 'pages/about'
 import Landing from 'pages/landing'
 import Gallery from 'pages/gallery'
 import Event from 'pages/event'
@@ -26,6 +27,7 @@ const StoreProvider = (props) => {
     auth: new Auth.store(useState(Auth.initial.detail)),
     history: props.history,
     landing: new Landing.store(useState(Landing.initial.detail)),
+    about: new About.store(useState(About.initial.detail)),
     notification: new EmptyTemplate.store(
       useState(EmptyTemplate.initial.detail),
     ),

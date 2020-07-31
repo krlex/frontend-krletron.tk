@@ -10,22 +10,19 @@ import Template from 'templates/default/detail'
 import getStyles from './styles'
 
 
-class Landing extends Component {
+class About extends Component {
   render() {
     const height = this.props.height || 'calc(100vh - 64px - 40px)'
     const styles = getStyles(this.props.theme, height);
     return (
       <Template style={styles.root}>
         <h1>
-          Welcome to Krletron.tk
+         I Have Nothing To Say About ME
         </h1>
-        <div style={styles.small}>
-          .......Every day you can learn something new........
-        </div>
         <div>
-          <Link to="/about" style={styles.freenit}>
+          <Link to="/" style={styles.freenit}>
           <Button>
-          Who am i?
+            GO HOME!!!
           </Button>
           </Link>
         </div>
@@ -35,10 +32,10 @@ class Landing extends Component {
 }
 
 
-Landing.propTypes = {
+About.propTypes = {
   height: PropTypes.number,
   theme: PropTypes.shape({}).isRequired,
 }
 
 
-export default withTheme(Landing)
+export default withTheme(About)

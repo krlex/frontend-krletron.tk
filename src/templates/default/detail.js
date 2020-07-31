@@ -161,7 +161,7 @@ class Template extends React.Component {
     const PublicMenu = event.list.total > 0
       ?[
         (
-          <Link to={`${event.detail.year}/gellery`} key="gallery">
+          <Link to={`${event.detail.year}/gallery`} key="gallery">
             <MenuItem>
               <ListItemIcon>
                 <GalleryIcon />
@@ -171,7 +171,7 @@ class Template extends React.Component {
           </Link>
         ),
         (
-          <Link to="/events" key="events">
+          <Link to="/events" style={styles.a} key="events">
             <MenuItem>
               <ListItemIcon>
                 <EventIcon />
@@ -181,6 +181,9 @@ class Template extends React.Component {
           </Link>
         )
       ] :null
+    const title = resolution.detail.width > 510
+      ? 'Krstan Vjestica'
+      : 'Krletron.tk'
     return (
       <div>
         <AppBar position="static">
@@ -190,7 +193,7 @@ class Template extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Link to="/" data-id="app">
-                Welcome to Krletron.tk
+                {title}
               </Link>
             </Typography>
             {BarLinks}
@@ -217,6 +220,14 @@ class Template extends React.Component {
               onKeyDown={this.handleMenuClose}
             >
               {PublicMenu}
+              <Link to="/gallery" style={styles.a}>
+                <MenuItem>
+                  <ListItemIcon>
+                    <GalleryIcon />
+                  </ListItemIcon>
+                  Gallery
+                </MenuItem>
+              </Link>
               {AuthMenu}
               {LoggingMenu}
             </div>

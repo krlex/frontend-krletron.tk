@@ -8,6 +8,7 @@ import {
   rest,
 } from 'freenit'
 import Dashboard from 'pages/dashboard'
+import About from 'pages/about'
 import Landing from 'pages/landing'
 import Gallery from 'pages/gallery'
 import Event from 'pages/event'
@@ -25,6 +26,7 @@ const Routing = () => {
   return (
     <Switch>
       <Route exact path="/" component={Landing.detail} />
+      <Route exact path="/about" component={About.detail} />
       <Route exact path="/confirm/:token" component={Auth.confirm} />
       <Route exact path="/dashboard" component={Dashboard.detail} />
       <Route exact path="/login" component={Auth.login} />
