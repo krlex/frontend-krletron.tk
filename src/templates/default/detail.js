@@ -145,6 +145,18 @@ class Template extends React.Component {
         ...AdminMenu,
       ]
       : null
+    const about = event.list.total > 0
+      ? (
+        <Link to={`/${event.detail.year}/about`}>
+          <Button color="inherit">About</Button>
+        </Link>
+      ) : null
+    const blog = event.list.total > 0
+      ? (
+        <Link to={`/${event.detail.year}/blog`}>
+          <Button color="inherit">Blog</Button>
+        </Link>
+      ) : null
     const gallery = event.list.total > 0
       ? (
         <Link to={`/${event.detail.year}/gallery`}>
@@ -154,12 +166,34 @@ class Template extends React.Component {
     const BarLinks = resolution.detail.width > 410
       ? (
         <div>
+          {about}
+          {blog}
           {gallery}
           {AuthButton}
         </div>
       ) : null
     const PublicMenu = event.list.total > 0
       ?[
+        (
+          <Link to={`${event.detail.year}/about`} key="about">
+            <MenuItem>
+              <ListItemIcon>
+                <GalleryIcon />
+              </ListItemIcon>
+                About
+            </MenuItem>
+          </Link>
+        ),
+        (
+          <Link to={`${event.detail.year}/blog`} key="blog">
+            <MenuItem>
+              <ListItemIcon>
+                <GalleryIcon />
+              </ListItemIcon>
+                Blog
+            </MenuItem>
+          </Link>
+        ),
         (
           <Link to={`${event.detail.year}/gallery`} key="gallery">
             <MenuItem>
@@ -220,6 +254,22 @@ class Template extends React.Component {
               onKeyDown={this.handleMenuClose}
             >
               {PublicMenu}
+              <Link to="/about" style={styles.a}>
+                <MenuItem>
+                  <ListItemIcon>
+                    <GalleryIcon />
+                  </ListItemIcon>
+                  About Me
+                </MenuItem>
+              </Link>
+              <Link to="/blog" style={styles.a}>
+                <MenuItem>
+                  <ListItemIcon>
+                    <GalleryIcon />
+                  </ListItemIcon>
+                  Blog
+                </MenuItem>
+              </Link>
               <Link to="/gallery" style={styles.a}>
                 <MenuItem>
                   <ListItemIcon>

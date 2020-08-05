@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import { withTheme } from '@material-ui/core/styles'
+
 import {
-  Button,
-} from '@material-ui/core'
+    BlogAbout,
+  //BlogInfo,
+} from 'components'
 
 import Template from 'templates/default/detail'
 import getStyles from './styles'
@@ -16,16 +17,7 @@ class Blog extends Component {
     const styles = getStyles(this.props.theme, height);
     return (
       <Template style={styles.root}>
-        <h1>
-         I Have Nothing To Show You
-        </h1>
-        <div>
-          <Link to="/" style={styles.freenit}>
-          <Button>
-            GO HOME!!!
-          </Button>
-          </Link>
-        </div>
+        <BlogAbout />
       </Template>
     )
   }

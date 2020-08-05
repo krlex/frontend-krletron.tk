@@ -1,5 +1,7 @@
 export { default as EventList } from './event-list'
 export { default as GalleryUpload } from './gallery-upload'
+export { default as BlogAbout } from './blog-about'
+//export { default as BlogInfo } from './blog-info'
 export { default as LandingAbout } from './landing-about'
 export { default as LandingInfo } from './landing-info'
 export { default as LandingOrganizers } from './landing-organizers'
