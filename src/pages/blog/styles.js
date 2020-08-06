@@ -18,7 +18,7 @@ export default function getStyles(theme, height) {
     },
 
     link: {
-      color: 'white',
+      color: 'grene',
     },
 
     freenit: {

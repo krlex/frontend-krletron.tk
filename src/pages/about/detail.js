@@ -21,7 +21,7 @@ class About extends Component {
         </h1>
         <div>
           <Link to="/" style={styles.freenit}>
-          <Button>
+          <Button style={styles.button}>
             GO HOME!!!
           </Button>
           </Link>

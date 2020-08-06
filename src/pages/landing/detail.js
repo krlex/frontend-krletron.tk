@@ -24,7 +24,7 @@ class Landing extends Component {
         </div>
         <div>
           <Link to="/about" style={styles.freenit}>
-          <Button>
+          <Button style={styles.button}>
           Who am i?
           </Button>
           </Link>

@@ -21,6 +21,10 @@ export default function getStyles(theme, height) {
       color: 'white',
     },
 
+    button: {
+      color: 'white',
+    },
+
     freenit: {
       height: 70,
       width: 290,

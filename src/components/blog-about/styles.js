@@ -21,7 +21,7 @@ export default function getStyles(theme, resolution) {
       small: {
         fontSize: '22px',
         marginTop: 10,
-        color: '#888',
+        color: '#000',
         textAlign: 'justify',
       },
       center: {
