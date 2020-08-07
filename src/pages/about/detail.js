@@ -6,6 +6,10 @@ import {
   Button,
 } from '@material-ui/core'
 
+import {
+    AboutMe,
+} from 'components'
+
 import Template from 'templates/default/detail'
 import getStyles from './styles'
 
@@ -16,16 +20,7 @@ class About extends Component {
     const styles = getStyles(this.props.theme, height);
     return (
       <Template style={styles.root}>
-        <h1>
-         I Have Nothing To Say About ME
-        </h1>
-        <div>
-          <Link to="/" style={styles.freenit}>
-          <Button style={styles.button}>
-            GO HOME!!!
-          </Button>
-          </Link>
-        </div>
+        <AboutMe/>
       </Template>
     )
   }
