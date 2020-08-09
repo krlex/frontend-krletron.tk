@@ -9,12 +9,13 @@ export default function getStyles(theme, height) {
       justifyContent: 'center',
       alignItems: 'center',
       padding: 20,
+      color: 'white'
     },
 
     small: {
       fontSize: '25px',
       marginTop: 10,
-      color: 'rgb(80, 80, 80)',
+      color: 'white',
     },
 
     link: {
